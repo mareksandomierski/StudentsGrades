@@ -6,3 +6,12 @@ public class Main {
 	// write your code here
     }
 }
+
+class Student {
+
+    String name;
+    String lastName;
+    double [] grade;
+
+}
+
