@@ -22,6 +22,14 @@ public class Main {
     }
 }
 
+class Display {
+
+    void text(String name, String lastName, double average, double lowestGrade, double highestGrade) {
+
+        System.out.println("Student " + name + " " + lastName + " obtained a average grade: " + average + " The lowest grade is: " + lowestGrade + " The highest grade is: " + highestGrade);
+    }
+}
+
 class Student {
 
     String name;
@@ -32,7 +40,7 @@ class Student {
 
 class Statistic {
 
-    double srednia(double[] grade) {
+    double average(double[] grade) {
 
         double sum = 0;
         for (int i = 0; i < grade.length; i++) {
