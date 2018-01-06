@@ -3,7 +3,22 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
+        Student u1 = new Student();
+        Student u2 = new Student();
+        Student u3 = new Student();
+
+        u1.name = "Stefan";
+        u1.lastName = "Zamrzyk";
+        u1.grade = new double[] {2.5,4,3,4.5,3,5};
+
+        u2.name = "Agnieszka";
+        u2.lastName = "Wczas";
+        u2.grade = new double[] {5,4.5,5,4.5,5};
+
+        u3.name = "Maciej";
+        u3.lastName = "Nojman";
+        u3.grade = new double[] {5,4,3.5,4.5,2,5,4.5};
     }
 }
 
