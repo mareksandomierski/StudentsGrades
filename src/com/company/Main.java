@@ -1,7 +1,5 @@
 package com.company;
 
-import java.io.*;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -13,51 +11,30 @@ public class Main {
         u1.name = "Stefan";
         u1.lastName = "Zamrzyk";
         u1.grade = new double[] {2.5,4,3,4.5,3,5};
+        Statistic s1 = new Statistic();
 
         u2.name = "Agnieszka";
         u2.lastName = "Wczas";
         u2.grade = new double[] {5,4.5,5,4.5,5};
+        Statistic s2 = new Statistic();
 
         u3.name = "Maciej";
         u3.lastName = "Nojman";
         u3.grade = new double[] {5,4,3.5,4.5,2,5,4.5};
+        Statistic s3 = new Statistic();
 
         Display w = new Display();
-        w.text(u1);
-        w.text(u2);
-        w.text(u3);
-
-        String line = "";
-        FileInputStream fin = null;
-
-        try {
-            fin = new FileInputStream("./resources/plik.txt");
-
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found. \n" + e);
-            System.exit(-1);
-        }
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(fin));
-
-        try {
-            while ((line = reader.readLine()) != null) {
-                System.out.println("\n " + line);
-            }
-        } catch (IOException e) {
-            System.out.println("error enter/exit");
-        }
+        w.text(u1.name, u1.lastName, s1.average(u1.grade), s1.lowestGrade(u1.grade), s1.highestGrade(u1.grade));
+        w.text(u2.name, u2.lastName, s2.average(u2.grade), s2.lowestGrade(u2.grade), s2.highestGrade(u2.grade));
+        w.text(u3.name, u3.lastName, s3.average(u3.grade), s3.lowestGrade(u3.grade), s3.highestGrade(u3.grade));
     }
 }
 
 class Display {
 
-    void text(Student student) {
-        Statistic stats = new Statistic();
-        System.out.println("Student " + student.name + " " + student.lastName
-                + " obtained a average grade: " + stats.average(student.grade)
-                + " The lowest grade is: " + stats.lowestGrade(student.grade)
-                + " The highest grade is: " + stats.highestGrade(student.grade));
+    void text(String name, String lastName, double average, double lowestGrade, double highestGrade) {
+
+        System.out.println("Student " + name + " " + lastName + " obtained a average grade: " + average + " The lowest grade is: " + lowestGrade + " The highest grade is: " + highestGrade);
     }
 }
 
